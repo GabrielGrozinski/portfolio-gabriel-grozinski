@@ -7,6 +7,7 @@ import confereAe from './assets/confere-ae.png';
 import viajour from './assets/viajour.png';
 import closetConcept from './assets/closet-concept.png';
 import misturaBoa from './assets/mistura-boa-mobile.png';
+import taNaBiblia from './assets/ta-na-biblia.png';
 
 
 const skills = [
@@ -194,7 +195,7 @@ export default function App() {
                 desc: 'Soluções estratégicas para aumentar sua visibilidade e impacto no mundo digital',
                 projetos: [
                     {
-                        title: 'Desenvolvedor Full-Stack',
+                        title: 'Dev Full-Stack',
                         desc: 'Soluções completas com tecnologias modernas, focadas em performance.',
                         rodape: 'Full Stack',
                         icone: <Code size={30}/>
@@ -236,18 +237,18 @@ export default function App() {
             sobre_mim: {
                 titulo: "Sobre Mim",
                 subtitulo: "Prazer, sou ",
-                p_1: <span style={{lineHeight: '26px'}}>
+                p_1: <span className="leading-loose lg:leading-relaxed">
                     Sou desenvolvedor Full-Stack com cerca de 1 ano e meio de experiência em projetos, com foco principal em front-end, criando interfaces modernas, intuitivas e bem estruturadas.
                     <br />
                     Também possuo experiência com back-end e bancos de dados, o que me permite atuar de ponta a ponta no desenvolvimento.
                     </span>,
-                p_2: <span style={{lineHeight: '26px'}}>
+                p_2: <span className="leading-loose lg:leading-relaxed">
                     Minha formação em programação foi construída por meio de cursos online, principalmente pela Udemy, onde desenvolvi uma base sólida nas principais tecnologias do mercado.
                     </span>,
-                p_3: <span style={{lineHeight: '26px'}}>
+                p_3: <span className="leading-loose lg:leading-relaxed">
                     Criei do zero o site <a href="https://confereae.com.br/" target="_blank" className="text-amber-400 text-shadow-lg font-medium cursor-pointer relative after:content-[''] after:absolute after:h-[1.4px] after:-bottom-[1.4px] after:scale-y-100 after:left-0 after:w-full after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:bg-amber-400">Confere Aê</a>, uma plataforma voltada à análise financeira de clubes brasileiros. Construi toda a estrutura do front-end até a lógica de back-end e integração com banco de dados. A plataforma conta com funcionalidades como autenticação de usuários (incluindo login com Google), sistema de pagamentos integrado ao Mercado Pago e organização de dados de forma clara e acessível.
                     </span>,
-                p_4: <span style={{lineHeight: '26px'}}>
+                p_4: <span className="leading-loose lg:leading-relaxed">
                     Além da área de tecnologia, também me dedico à escrita de livros infantis, com duas obras já publicadas. Nas horas vagas, atuo como professor de crianças, experiência que contribui diretamente para o desenvolvimento da minha comunicação, didática e criatividade.
                     </span>,
                 experiencia: 
@@ -283,6 +284,17 @@ export default function App() {
                         finalizado: true
                     },
                     {
+                        img: taNaBiblia,
+                        titulo: 'Tá na Bíblia?',
+                        p: 'Site de quiz bíblico com forte front-end e experiência de usuário.',
+                        skills: ['TypeScript', 'Tailwind'],
+                        tipo: ['Finalizados', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: 'https://ta-na-biblia.vercel.app/',
+                        finalizado: true,
+                        btn_finalizado: "Visitar",
+                    },
+                    {
                         img: viajour,
                         titulo: 'ViaJour',
                         p: 'Site de organização de viagens, com foco em experiência de usuários',
@@ -308,7 +320,7 @@ export default function App() {
                         img: misturaBoa,
                         titulo: 'Mistura Boa',
                         p: 'Aplicativo móvel de gerenciamento de receitas e comunidade escalável.',
-                        skills: ['React-Native', 'Firebase', 'Tailwind'],
+                        skills: ['React-Native', 'Firebase'],
                         tipo: ['Finalizados', 'Todos'],
                         btn_texto: 'Visitar',
                         link: 'https://github.com/GabrielGrozinski/Mistura-Boa',
@@ -345,7 +357,7 @@ export default function App() {
                 desc: 'Strategic solutions to increase your visibility and impact in the digital world',
                 projetos: [
                     {
-                        title: 'Full-Stack Developer',
+                        title: 'Full-Stack Dev',
                         desc: 'Complete solutions using modern technologies, focused on performance.',
                         rodape: 'Full Stack',
                         icone: <Code size={30}/>
@@ -459,6 +471,17 @@ export default function App() {
                     },
 
                     {
+                        img: taNaBiblia,
+                        titulo: 'Tá na Bíblia?',
+                        p: 'Modern website with a strong front-end focus and great user experience.',
+                        skills: ['TypeScript', 'Tailwind'],
+                        tipo: ['Completed', 'All'],
+                        btn_texto: 'Visit',
+                        link: 'https://ta-na-biblia.vercel.app/',
+                        finalizado: true,
+                    },
+
+                    {
                         img: viajour,
                         titulo: 'ViaJour',
                         p: 'Travel organization website focused on user experience.',
@@ -486,7 +509,7 @@ export default function App() {
                         img: misturaBoa,
                         titulo: 'Mistura Boa',
                         p: 'Mobile app for recipe management and scalable community features.',
-                        skills: ['React-Native', 'Firebase', 'Tailwind'],
+                        skills: ['React-Native', 'Firebase'],
                         tipo: ['Completed', 'All'],
                         btn_texto: 'Visit',
                         link: 'https://github.com/GabrielGrozinski/Mistura-Boa',
@@ -562,7 +585,7 @@ export default function App() {
 
     const root = window.document.documentElement;
     root.style.overflowX = 'hidden';
-    root.style.scrollBehavior = 'smooth'
+    root.style.scrollBehavior = 'smooth';
     const [tamanho, setTamanho] = useState(200);
     const [crescendo, setCrescendo] = useState(true);
     const [scrollado, setScrollado] = useState(false);
@@ -619,7 +642,10 @@ export default function App() {
     const [apagando, setApagando] = useState(false);
 
     useEffect(() => {
-        setProjetoAtual(lang === 'br' ? 'Todos' : 'All')
+      setProjetoAtual(lang === 'br' ? 'Todos' : 'All')
+    }, [lang]);
+
+    useEffect(() => {
         let timeout;
 
         const textoCompleto = traducao[lang].header.tipos[i];
@@ -656,7 +682,9 @@ export default function App() {
             });
         }, 50);
 
-        return () => clearInterval(interval);
+        return () => {
+          clearInterval(interval);
+        };
     }, [crescendo]);
 
     useEffect(() => {
@@ -671,6 +699,7 @@ export default function App() {
     }, []);
 
     useEffect(() => {
+        const largura = window.innerWidth;
         setTimeout(() => {
             setAnimacaoHeader(true);
         }, 20);
@@ -678,7 +707,6 @@ export default function App() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // encontra qual ref corresponde a esse elemento
                     setRefsServicos((prev) =>
                         prev.map((s) =>
                             s.ref.current === entry.target
@@ -691,7 +719,7 @@ export default function App() {
                 }
             });
         }, {
-            threshold: 0.5,
+            threshold: largura < 1024 ? 0.35 : 0.5,
         });
 
         refsServicos.forEach((r) => {
@@ -703,7 +731,7 @@ export default function App() {
 
 
     return (
-        <div className={`font-[Poppins] flex flex-col bg-[#020617] pt-28`}>
+        <div className={`font-[Poppins] flex flex-col bg-[#020617] pt-28 overflow-x-hidden`}>
             <img className="fixed z-1 inset-0 opacity-2 object-cover" src={fundo} alt="" />
 
             <div
@@ -711,12 +739,12 @@ export default function App() {
                 top: 0,
                 behavior: 'smooth'
             })}
-            className={`fixed bottom-0 right-0 p-3.5 text-shadow-xl bg-blue-500 shadow-[0px_0px_12px_#ffffff6a] transition-all duration-200 rounded-full text-white z-3 cursor-pointer ${mostrarSetaScroll ? '-translate-1/2' : '-translate-x-1/2 translate-y-full'}`}
+            className={`overflow-hidden fixed bottom-0 right-0 p-3.5 text-shadow-xl bg-blue-500 shadow-[0px_0px_12px_#ffffff6a] transition-all duration-200 rounded-full text-white z-998 cursor-pointer ${mostrarSetaScroll ? '-translate-1/2' : '-translate-x-1/2 translate-y-full'}`}
             >
                 <ArrowUp size={24}/>
             </div>
 
-            <header className={`fixed top-0 left-0 right-0 transition-all duration-200 min-h-21 max-h-21 grid grid-cols-[15%_1fr_20%] justify-items-center items-center px-[7.5%] border-b z-999 ${!scrollado ? 'border-b-[#02061701] bg-[#02061701]' : 'border-b-zinc-300/8 bg-linear-to-r from-[#03050d] to-[#020510]'}`}>
+            <header className={`fixed top-0 w-full transition-all duration-200 min-h-21 max-h-21 flex lg:grid lg:grid-cols-[15%_1fr_20%] justify-between lg:justify-items-center items-center lg:px-[7.5%] px-[5.5%] border-b z-999 ${!scrollado ? 'border-b-[#02061701] bg-[#02061701]' : 'border-b-zinc-500/8 bg-linear-to-r from-[#03050d] to-[#020510]'}`}>
                 <span className="flex items-center gap-2">
                     <svg
                         width="42"
@@ -758,7 +786,7 @@ export default function App() {
                     </h1>
                 </span>
 
-                <section className="grid grid-cols-6 gap-2 rounded-full p-2 bg-[#0b102b] border border-slate-800/50 min-w-2/3 max-w-2/3">
+                <section className="hidden lg:grid grid-cols-6 gap-2 rounded-full p-2 bg-[#0b102b] border border-slate-800/50 min-w-2/3 max-w-2/3">
                     {topicosHeader.map((t, index) => 
                         <div 
                         onClick={() => {
@@ -783,9 +811,10 @@ export default function App() {
                             }
                         </div>
                     )}
+                
                 </section>
 
-                <section className="ml-auto flex gap-4 items-center">
+                <section className="ml-auto flex gap-4 items-center scale-90 lg:scale-100">
                     <div className="relative" onClick={() => setMostrarIdiomas(!mostrarIdiomas)}>
                         <h2 className="font-medium uppercase text-white text-shadow-xs flex gap-0.5 items-center cursor-pointer">
                             <img className="rounded-full max-w-9 min-w-9 max-h-7 min-h-7 scale-80 cursor-default" src={idiomaAtual.bandeira} alt="" />
@@ -793,13 +822,13 @@ export default function App() {
                             <ChevronDown className={`${mostrarIdiomas && 'rotate-180'} transition-all duration-150`} size={20}/>
                         </h2>
 
-                        <div className={`absolute min-w-full bottom-0 translate-y-24 flex flex-col transition-all duration-150 bg-black/20 ${mostrarIdiomas ? 'opacity-100' : 'opacity-0'} overflow-hidden`}>
+                        <div className={`absolute min-w-full bottom-0 flex flex-col transition-all duration-300 bg-[#020510] rounded-md shadow-sm shadow-black/30 translate-y-23 ${scrollado ? 'lg:bg-[#020510]' : 'lg:bg-black/20'} ${mostrarIdiomas ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} overflow-hidden`}>
                             {idiomas.map((i, index) =>
                                 <span onClick={() => {
                                     setIdiomaAtual(i);
                                     setLang(i.texto);
                                     }} 
-                                    key={index} className="flex items-center justify-between px-[17.5%] gap-2 cursor-pointer transition-all duration-200 hover:bg-black/40 p-1 py-2">
+                                    key={index} className={`flex items-center justify-between px-[17.5%] gap-2 cursor-pointer transition-all duration-200 p-1 py-2 ${scrollado ? 'hover:bg-gray-700/70' : 'hover:bg-black/40'}`}>
                                     <img src={i.bandeira} className="rounded-full min-w-6 max-w-6 max-h-4.75 min-h-4.75" alt="" />
 
                                     <h2 className="font-medium uppercase text-white text-shadow-xs">
@@ -822,8 +851,8 @@ export default function App() {
                 </section>
             </header>
 
-            <header ref={home.ref} className="min-h-screen pt-10 z-1 px-[10%]">
-                <div className="absolute top-0 right-0 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full translate-x-1/4 -translate-y-1/4"></div>
+            <header ref={home.ref} className="overflow-x-hidden min-h-screen pb-16 lg:pb-0 lg:pt-10 z-1 px-[10%]">
+                <div className="absolute top-0 right-0 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full t/lg:ranslate-x-1/4 -translate-y-1/4"></div>
                 <div className="absolute bottom-0 left-0 w-60 h-60 bg-blue-700 opacity-60 -translate-x-1/4 translate-y-1/4 blur-[120px] rounded-full"></div>
                 <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-400 opacity-50 blur-[100px] rounded-full transition-all duration-100"
@@ -833,37 +862,37 @@ export default function App() {
                     }}
                 />
 
-                <div className="flex items-center justify-between">
-                    <section className="flex flex-col gap-8 max-w-[62%]">
-                        <h1 className={`text-center text-xs font-medium px-2.75 bg-[#091133] border border-[#00D4FF4a] text-[#17c9ff] text-shadow-xs mr-auto p-2 rounded-full transition-all duration-600 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
+                <div className="flex lg:flex-row flex-col items-center lg:justify-between justify-center">
+                    <section className="flex flex-col gap-6.5 lg:gap-8 lg:max-w-[62%] min-w-full lg:min-w-0 items-center lg:items-stretch">
+                        <h1 className={`text-center text-xs font-medium px-2.75 bg-[#091133] border border-[#00D4FF4a] text-[#17c9ff] text-shadow-xs lg:mr-auto p-2 rounded-full transition-all duration-600 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
                             {traducao[lang].header.title}
                         </h1>
 
-                        <h1 className={`text-white text-6xl text-shadow-sm tracking-[1.2px] font-medium transition-all duration-650 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
-                            <span className="text-7xl">G</span>abriel
+                        <h1 className={`text-white text-center lg:text-start lg:text-6xl text-5xl text-shadow-sm tracking-[1.2px] font-medium transition-all duration-650 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
+                            <span className="lg:text-7xl text-6xl">G</span>abriel
                             <br />
                             <span className="text-[#298ee9]">
-                                <span className="text-7xl">G</span>rozinski
+                                <span className="text-6xl lg:text-7xl">G</span>rozinski
                             </span>
                         </h1>
 
-                        <h2 className={`text-2xl bg-linear-to-r from-[#52aeff] bg-clip-text text-transparent via-[#0377de] to-[#047fea] font-medium font-mono text-shadow-[1px_1px_1px_#ffffff3a] transition-all duration-1200 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
+                        <h2 className={`text-xl lg:text-2xl bg-linear-to-r from-[#52aeff] bg-clip-text text-transparent via-[#0377de] to-[#047fea] text-center lg:text-start font-medium font-mono text-shadow-[1px_1px_1px_#ffffff3a] transition-all duration-1200 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
                             {textoAtual}
                             <span className="text-neutral-200 text-shadow-sm">
                                 |
                             </span>
                         </h2>
 
-                        <p className={`text-slate-400 font-medium max-w-3/4 text-shadow-sm transition-all duration-1250 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
+                        <p className={`lg:text-slate-400 lg:text-start text-center text-slate-400 text-shadow-sky-50/1 text-shadow-sm text-sm lg:text-base tracking-wider font-medium lg:max-w-3/4 leading-relaxed lg:leading-normal transition-all duration-1250 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
                             {traducao[lang].header.desc}
                         </p>
 
-                        <section className={`flex gap-4 font-semibold transition-all duration-1300 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
+                        <section className={`flex mt-4 lg:mt-0 lg:flex-row flex-col lg:min-w-0 min-w-full gap-4 font-semibold transition-all duration-1300 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`}>
                             <a 
                             href="https://wa.me/5511944445511?text=Olá,%20vim%20pelo%20site!"
                             target="_blank"
                             rel="noopener noreferrer" 
-                            className="p-4 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] text-[15px] flex justify-center items-center gap-2.25 rounded-full tracking-[0.6px] px-6.5 cursor-pointer transition-all duration-220 hover:-translate-y-2 hover:shadow-[0px_2px_12px_#ffffff5a]">
+                            className="p-3 lg:p-4 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] text-[15px] flex justify-center items-center gap-2.25 rounded-full tracking-[0.6px] px-6.5 cursor-pointer transition-all duration-220 hover:-translate-y-2 hover:shadow-[0px_2px_12px_#ffffff5a]">
                                 {traducao[lang].header.btn_falar}
                                 <ArrowRight/>
                             </a>
@@ -871,20 +900,20 @@ export default function App() {
                             <button onClick={() => projetos.ref.current?.scrollIntoView({
                                 behavior: 'smooth',
                                 block: 'start',
-                            })} className="p-4 text-white bg-[#13192f] border border-slate-400/24 rounded-full flex justify-center items-center gap-2.25 text-[15px] tracking-[0.6px] px-6.5 cursor-pointer transition-all duration-220 hover:-translate-y-2 hover:border-[#00a6ff8c]">
+                            })} className="p-3 lg:p-4 text-white bg-[#13192f] border border-slate-400/24 rounded-full flex justify-center items-center gap-2.25 text-[15px] tracking-[0.6px] px-6.5 cursor-pointer transition-all duration-220 hover:-translate-y-2 hover:border-[#00a6ff8c]">
                                 <Eye/>
                                 {traducao[lang].header.btn_projeto}
                             </button>
                         </section>
                     </section>
 
-                    <img className={`object-cover rounded-full max-w-[40vw] max-h-[40vw] mr-auto shadow-[0px_0px_20px_#0000006a] transition-all duration-1200 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`} src={perfil} alt="" />
+                    <img className={`object-cover rounded-full mt-12 lg:mt-0 max-w-[50vw] max-h-[50vw] lg:max-w-[40vw] lg:max-h-[40vw] lg:mr-auto shadow-[0px_0px_20px_#0000006a] transition-all duration-1200 ${animacaoHeader ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'}`} src={perfil} alt="" />
                 </div>
 
             </header>
 
-            <main>
-                <section ref={servicos.ref} className="scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[10%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025]">
+            <main className="pt-6 lg:pt-0 overflow-x-hidden">
+                <section ref={servicos.ref} className="scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[6.5%] lg:px-[10%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025]">
                         <div className="absolute top-0 right-0 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full translate-x-[42%] -translate-y-1/3"></div>
                         <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-700 opacity-35 -translate-x-[46%] translate-y-[60%] blur-[120px] rounded-full"></div>
 
@@ -892,15 +921,15 @@ export default function App() {
                             {traducao[lang].main.servico.title}
                         </h1>
 
-                        <h1 className="text-[#298ee9] text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
+                        <h1 className="text-[#298ee9] text-center lg:text-start text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
                             {traducao[lang].main.servico.subtitle}
                         </h1>
 
-                        <p className="text-slate-400 font-medium max-w-[40%] text-center text-shadow-sm z-2">
+                        <p className="text-slate-400 font-medium lg:max-w-[40%] text-center text-shadow-sm z-2">
                             {traducao[lang].main.servico.desc}
                         </p>
 
-                        <section className="flex flex-wrap gap-6 mt-10 z-2">
+                        <section className="flex flex-wrap lg:flex-row flex-col gap-6 mt-10 z-2">
                             {traducao[lang].main.servico.projetos.map((p, index) =>
                                 <span 
                                 key={index}
@@ -909,7 +938,7 @@ export default function App() {
                                 >
                                 <article
                                 will-change-transform="true" transform-gpu="true"
-                                className={`rounded-[8%] min-h-84 max-h-92 min-w-[25vw] max-w-[25vw] p-6.5 px-10 bg-[#070c23] border border-slate-800 grid grid-rows-[1fr_50%_1fr] justify-items-start group shadow-white/2 shadow-xs hover:shadow-white/10 hover:shadow-lg hover:border-[#00a6ff5d] relative transition-all duration-300 ease-in-out hover:-translate-y-2.5`}
+                                className={`rounded-[8%] lg:min-h-84 lg:max-h-92 min-h-88 max-h-98 lg:min-w-[25vw] lg:max-w-[25vw] p-6.5 px-10 bg-[#070c23] border border-slate-800 grid grid-rows-[1fr_50%_1fr] justify-items-start group shadow-white/2 shadow-xs hover:shadow-white/10 hover:shadow-lg hover:border-[#00a6ff5d] relative transition-all duration-300 ease-in-out hover:-translate-y-2.5`}
                                 >
                                     <div
                                     className="absolute inset-0 bg-sky-300/12 transition-opacity duration-200 group-hover:opacity-100 opacity-2 rounded-[8%]"
@@ -929,8 +958,8 @@ export default function App() {
                                         </p>
                                     </div>
 
-                                    <div className="py-4 border-t border-t-neutral-400/10 grid grid-cols-[33%_1fr] items-center min-w-full gap-2">
-                                        <h2 className="text-center text-xs font-medium px-2.75 bg-[#091133] border border-[#00D4FF4a] text-[#17c9ff] text-shadow-xs p-2 rounded-full flex items-center justify-center mr-auto">
+                                    <div className="py-4 border-t border-t-neutral-400/10 grid grid-cols-[45%_1fr] lg:grid-cols-[33%_1fr] items-center min-w-full gap-2">
+                                        <h2 className="text-center text-xs font-medium px-2.75 bg-[#091133] border border-[#00D4FF4a] text-[#17c9ff] text-shadow-xs p-2 rounded-full flex items-center justify-center lg:mr-auto">
                                             {p.rodape}
                                         </h2>
 
@@ -947,7 +976,7 @@ export default function App() {
                         href="https://wa.me/5511944445511?text=Olá,%20vim%20pelo%20site!%20Queria%20fazer%20um%20orçamento."
                         target="_blank"
                         rel="noopener noreferrer" 
-                        className="p-5 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] px-7 cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] mt-8 font-semibold z-2 group relative overflow-hidden">
+                        className="p-4 lg:p-5 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] px-7 cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] mt-8 font-semibold z-2 group relative overflow-hidden">
                             {traducao[lang].main.servico.btn_orcamento}
                             <ArrowRight size={22} className="group-hover:translate-x-0.5 transition-all duration-320"/>
 
@@ -957,15 +986,15 @@ export default function App() {
                         </a>
                 </section>
 
-                <section ref={sobre_mim.ref} className="scroll-mt-12 grid grid-cols-2 px-[10%] items-center gap-10 pt-24 pb-22">
+                <section ref={sobre_mim.ref} className="overflow-x-hidden scroll-mt-12 flex flex-col lg:grid lg:grid-cols-2 px-[10%] items-center gap-22 lg:gap-10 pt-24 pb-22">
                     <div className="flex-1 place-self-center relative">
-                        <img className="min-h-[80vh] max-h-[80vh] max-w-[70vh] object-cover rounded-xl" src={perfil} alt="" />
+                        <img className="lg:min-h-[80vh] lg:max-h-[80vh] lg:max-w-[70vh] min-h-[55vh] object-cover rounded-xl" src={perfil} alt="" />
 
                         <div
-                        className="absolute inset-0 bg-linear-to-t from-black/32 to-black/2 via-black/8"
+                        className="absolute inset-0 bg-linear-to-t from-black/82 to-black/2 via-black/8"
                         />
 
-                        <div className="absolute bottom-0 z-3 right-0 translate-10 flex flex-col items-center justify-center gap-2 bg-linear-to-r p-6 px-5 rounded-4xl border border-slate-800 bg-[#131834] text-4xl font-semibold">
+                        <div className="absolute bottom-0 z-3 right-0 translate-10 flex flex-col items-center justify-center gap-2 bg-linear-to-r lg:p-6 lg:px-5 p-4 lg:scale-100 scale-80 rounded-xl lg:rounded-4xl border border-slate-800 bg-[#131834] text-4xl font-semibold">
                             <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-blue-600">1+</span>
 
                             <span className="text-slate-400/90 text-sm text-center font-normal">
@@ -974,44 +1003,47 @@ export default function App() {
                         </div>
                     </div>
 
-                    <article className="flex flex-col gap-6 items-start z-2">
+                    <article className="flex flex-col gap-6 items-center lg:items-start z-2">
                         <h1 className="text-center text-sm font-medium px-5.5 bg-[#091133] border border-[#00D4FF4a] text-[#17c9ff] text-shadow-xs p-2 rounded-full uppercase tracking-[1.2px] z-2">
                             {traducao[lang].main.sobre_mim.titulo}
                         </h1>
 
-                        <h1 className="text-5xl font-semibold text-white text-shadow-sm tracking-wider">
+                        <h1 className="text-3xl text-center lg:text-start lg:text-5xl font-semibold text-white text-shadow-sm tracking-wider">
                             {traducao[lang].main.sobre_mim.subtitulo}
                             <span className="text-transparent bg-linear-to-r bg-clip-text from-[#6ebcff] via-[#5eb1fb] to-[#309af7]">
                                 Gabriel
                             </span>
                         </h1>
 
-                        <p className="text-slate-400 flex flex-col gap-6 text-shadow-sm tracking-wide">
+                        <p className="text-slate-400 text-center lg:text-start flex flex-col gap-6 text-shadow-sm tracking-wide">
                             {traducao[lang].main.sobre_mim.p_1}
                             {traducao[lang].main.sobre_mim.p_2}
                             {traducao[lang].main.sobre_mim.p_3}
                             {traducao[lang].main.sobre_mim.p_4}
                         </p>
 
-                        <section className="flex mt-4 min-w-full items-center">
-                            <button className="px-6 py-3 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] font-medium flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] group relative overflow-hidden text-sm mr-6">
+                        <section className="grid grid-cols-[20%_1fr_1fr_1fr_20%] gap-4 lg:gap-0 grid-rows-2 lg:flex mt-4 min-w-full items-center justify-items-center">
+                            <button className="min-w-full lg:min-w-0 col-span-full row-1 px-6 py-3 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] font-medium flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] group relative overflow-hidden text-sm lg:mr-6">
                                 {traducao[lang].main.sobre_mim.btn_jornada}
                                 <ArrowRight size={22} className="group-hover:translate-x-0.5 transition-all duration-320"/>
                             </button>
 
-                            <a 
+                            <a
+                            className="col-2 row-2 block"
                             href="https://www.instagram.com/gabrielgrozinski/"  target="_blank" 
                             rel="noopener noreferrer">
                                 <FaInstagram size={40} className="text-neutral-300 border border-slate-800/40 hover:-translate-y-0.75 hover:border-sky-400 hover:text-sky-400 transition-all duration-220 cursor-pointer bg-[#171c35] p-2.25 rounded-md"/>
                             </a>
 
                             <a 
+                            className="col-3 row-2 block"
                             href="https://github.com/GabrielGrozinski" target="_blank" 
                             rel="noopener noreferrer">
-                            <FaGithub size={40} className="text-neutral-300 border border-slate-800/40 hover:-translate-y-0.75 hover:border-sky-400 hover:text-sky-400 transition-all duration-220 cursor-pointer bg-[#171c35] p-2.25 rounded-md mx-4"/>
+                            <FaGithub size={40} className="text-neutral-300 border border-slate-800/40 hover:-translate-y-0.75 hover:border-sky-400 hover:text-sky-400 transition-all duration-220 cursor-pointer bg-[#171c35] p-2.25 rounded-md lg:mx-4"/>
                             </a>
 
                             <a 
+                            className="col-4 row-2"
                             href="https://www.linkedin.com/in/gabriel-grozinski/" target="_blank" 
                             rel="noopener noreferrer">
                             <FaLinkedin size={40} className="text-neutral-300 border border-slate-800/40 hover:-translate-y-0.75 hover:border-sky-400 hover:text-sky-400 transition-all duration-220 cursor-pointer bg-[#171c35] p-2.25 rounded-md"/>
@@ -1020,7 +1052,7 @@ export default function App() {
                     </article>
                 </section>
 
-                <section ref={habilidades.ref} className="scroll-mt-12 flex flex-col items-center justify-center pt-16 gap-6 relative px-[12%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden pb-22">
+                <section ref={habilidades.ref} className="overflow-x-hidden scroll-mt-12 flex flex-col items-center justify-center pt-16 gap-6 relative px-[6.5%] lg:px-[12%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden pb-22">
                     <div className="absolute top-0 left-0 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full -translate-x-[42%] -translate-y-1/6"></div>
                     <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-700 opacity-35 translate-x-[46%] translate-y-[20%] blur-[120px] rounded-full"></div>
 
@@ -1028,15 +1060,15 @@ export default function App() {
                         {traducao[lang].main.skills.titulo}
                     </h1>
 
-                    <h1 className="text-[#298ee9] text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
+                    <h1 className="text-[#298ee9] text-4xl text-center lg:text-start lg:text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
                         {traducao[lang].main.skills.subtitulo}
                     </h1>
 
-                    <p className="text-slate-400 font-medium max-w-[40%] text-center text-shadow-sm z-2">
+                    <p className="text-slate-400 font-medium lg:max-w-[40%] text-center text-shadow-sm z-2">
                         {traducao[lang].main.skills.p}
                     </p>
 
-                    <section style={{rowGap: '28px'}} className="grid grid-cols-[repeat(auto-fit,minmax(148px,auto))] min-w-full justify-items-center gap-2 mt-10 z-2">
+                    <section style={{rowGap: '28px'}} className="grid grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(148px,auto))] min-w-full justify-items-center gap-2 mt-10 z-2">
                         
                         {skills.map((s, index) =>
                         <div
@@ -1050,8 +1082,8 @@ export default function App() {
                             text-slate-400/90 font-mono
                             relative overflow-hidden group transition-colors transition-transform will-change-transform duration-300
                             hover:-translate-y-1
-                            hover:border-sky-500
-                            hover:text-sky-500
+                          hover:border-sky-500
+                          hover:text-sky-500
                         "
                         >
                         <span
@@ -1089,7 +1121,7 @@ export default function App() {
                     </section>
                 </section>
 
-                <section ref={projetos.ref} className="scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[8%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden">
+                <section ref={projetos.ref} className="overflow-x-hidden scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[8%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden">
                     <div className="absolute top-0 left-0 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full -translate-x-[42%] -translate-y-1/6"></div>
                     <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-700 opacity-35 translate-x-[46%] translate-y-[20%] blur-[120px] rounded-full"></div>
 
@@ -1097,15 +1129,15 @@ export default function App() {
                         {traducao[lang].main.projetos.titulo}
                     </h1>
 
-                    <h1 className="text-[#298ee9] text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
+                    <h1 className="text-[#298ee9] text-4xl text-center lg:text-start lg:text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
                         {traducao[lang].main.projetos.subtitulo}
                     </h1>
 
-                    <p className="text-slate-400 font-medium max-w-[40%] text-center text-shadow-sm z-2">
+                    <p className="text-slate-400 font-medium lg:max-w-[40%] text-center text-shadow-sm z-2">
                         {traducao[lang].main.projetos.p}
                     </p>
 
-                    <section style={{rowGap: '28px'}} className="flex flex-wrap justify-center items-center gap-2 mt-10 z-2">
+                    <section style={{rowGap: '12px'}} className="flex flex-wrap justify-center items-center gap-2 mt-10 z-2">
                             {traducao[lang].main.projetos.btn_projetos.map((p, index) =>
                                 <button key={index} onClick={() => setProjetoAtual(p)} className={`px-4 py-3 border text-shadow-sm flex justify-center items-center gap-1 rounded-full tracking-[0.6px] cursor-pointer transition-all duration-320 group relative overflow-hidden text-sm font-medium ${projetoAtual === p ? 'shadow-[0px_1px_12px_#ffffff3a] bg-linear-to-r from-[#0084ff] via-[#3B82F6] to-[#2f62fc] text-white border-slate-800/40' : 'border-slate-800 hover:text-white text-slate-500 hover:border-sky-400'}`}>
                                     {p}
@@ -1116,7 +1148,7 @@ export default function App() {
                             )}
                     </section>
 
-                    <section className="grid grid-cols-3 justify-items-center gap-12 mt-6">
+                    <section className="flex flex-col lg:grid lg:grid-cols-3 justify-items-center gap-12 mt-6">
                             {traducao[lang].main.projetos.projetos.map((p, index) =>
                                 p.tipo.includes(projetoAtual) &&
                                 <article className="grid grid-rows-[50%_30%_1fr] min-h-120 max-h-120 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1.25 border border-slate-800 hover:border-sky-400/40 rounded-4xl z-3 bg-slate-900" key={index}>
@@ -1139,7 +1171,7 @@ export default function App() {
 
                                         <div className="flex flex-wrap gap-2">
                                             {p.skills.map((s, index) =>
-                                                <h2 key={index} className="text-center text-[10px] font-medium px-3 bg-[#141d43] border border-[#00D4FF4a] text-[#3ad1ff] text-shadow-xs p-2 rounded-full uppercase tracking-[1.2px] z-2">
+                                                <h2 key={index} className="text-center text-[8px] font-medium px-3 bg-[#141d43] border border-[#00D4FF4a] text-[#3ad1ff] text-shadow-xs p-2 rounded-full uppercase tracking-[1.2px] z-2">
                                                     {s}
                                                 </h2>    
                                             )}
@@ -1160,7 +1192,7 @@ export default function App() {
                     </section>
                 </section>
 
-                <section ref={contato.ref} className="scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[12%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden">
+                <section ref={contato.ref} className="overflow-x-hidden scroll-mt-12 flex flex-col items-center justify-center pt-16 pb-26 gap-6 relative px-[12%] bg-linear-to-b from-[#020617] via-[#050818] to-[#0c1025] overflow-hidden">
                     <div className="absolute top-0 left-1/2 w-100 h-100 bg-blue-500 opacity-35 blur-[120px] rounded-full -translate-x-1/2"></div>
                     <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-700 opacity-35 translate-x-[46%] translate-y-[20%] blur-[120px] rounded-full"></div>
                     <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-700 opacity-35 -translate-x-[46%] translate-y-[20%] blur-[120px] rounded-full"></div>
@@ -1169,16 +1201,16 @@ export default function App() {
                         {traducao[lang].main.contato.titulo}
                     </h1>
 
-                    <h1 className="text-[#298ee9] text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
+                    <h1 className="text-[#298ee9] text-4xl text-center lg:text-start lg:text-6xl text-shadow-sm tracking-[1.2px] font-medium z-2">
                         {traducao[lang].main.contato.subtitulo}
                     </h1>
 
-                    <p className="text-slate-400 font-medium max-w-[40%] text-center text-shadow-sm z-2">
+                    <p className="text-slate-400 font-medium lg:max-w-[40%] text-center text-shadow-sm z-2">
                         {traducao[lang].main.contato.p}
                     </p>
 
-                    <section className="flex justify-center gap-6 min-w-full z-2 mt-6">
-                        <article className="bg-[#101632] rounded-2xl border border-slate-800 p-6 px-8 gap-4 flex items-center justify-center transition-all duration-220 hover:-translate-y-1.5 hover:border-sky-400/40 hover:shadow-[0px_1px_4px_#ffffff1a]">
+                    <section className="flex lg:flex-row flex-col items-center lg:items-stretch justify-center gap-6 min-w-full z-2 mt-6">
+                        <article className="min-w-full lg:min-w-0 bg-[#101632] rounded-2xl border border-slate-800 p-4 lg:p-6 lg:px-8 gap-4 flex items-center justify-center transition-all duration-220 hover:-translate-y-1.5 hover:border-sky-400/40 hover:shadow-[0px_1px_4px_#ffffff1a]">
                             <span className="text-white bg-blue-400 p-4 rounded-xl">
                                 <Mail />
                             </span>
@@ -1188,13 +1220,13 @@ export default function App() {
                                     {traducao[lang].main.contato.email}
                                 </h1>
 
-                                <h2 className="text-white font-medium">
+                                <h2 className="text-white lg:text-sm font-medium">
                                     gabrielgrozinski@gmail.com
                                 </h2>
                             </div>
                         </article>
                         
-                        <article className="bg-[#101632] rounded-2xl border border-slate-800 p-6 px-8 gap-4 flex items-center justify-center transition-all duration-220 hover:-translate-y-1.5 hover:border-sky-400/40 hover:shadow-[0px_1px_4px_#ffffff1a]">
+                        <article className="min-w-full lg:min-w-0 bg-[#101632] rounded-2xl border border-slate-800 p-4 lg:p-6 lg:px-8 gap-4 flex items-center lg:justify-center transition-all duration-220 hover:-translate-y-1.5 hover:border-sky-400/40 hover:shadow-[0px_1px_4px_#ffffff1a]">
                             <span className="text-white bg-blue-400 p-4 rounded-xl">
                                 <LocateFixed />
                             </span>
@@ -1215,9 +1247,9 @@ export default function App() {
                     href="https://wa.me/5511944445511?text=Olá,%20vim%20pelo%20site!"
                     target="_blank"
                     rel="noopener noreferrer" 
-                    className="p-5 text-white text-lg shadow-[0px_2px_5px_#ffffff3a] hover:bg-[#38da74] bg-[#25D366] flex justify-center items-center gap-2.5 rounded-2xl px-7 cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] mt-4 tracking-wider z-2 group relative overflow-hidden">
-                        <span className="w-13.5 h-13.5 bg-green-200/30 flex items-center justify-center rounded-xl cursor-pointer transition-all duration-150 hover:bg-[#27e76e]">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="-83.77245 -140.29175 726.0279 841.7505">
+                    className="min-w-full text-sm text-center lg:text-start lg:min-w-0 p-3 lg:p-5 text-white lg:text-lg shadow-[0px_2px_5px_#ffffff3a] hover:bg-[#38da74] bg-[#25D366] flex justify-center items-center gap-2.5 rounded-2xl lg:px-7 cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] mt-4 tracking-wider z-2 group relative overflow-hidden">
+                        <span className="w-15.5 lg:w-13.5 h-11.5 lg:h-13.5 bg-green-200/30 flex items-center justify-center rounded-full lg:rounded-xl cursor-pointer transition-all duration-150 hover:bg-[#27e76e]">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 lg:w-10 lg:h-10" viewBox="-83.77245 -140.29175 726.0279 841.7505">
                                 <path d="M407.185 336.283c-6.948-3.478-41.108-20.284-47.477-22.606-6.368-2.318-11-3.476-15.632 3.478-4.632 6.954-17.948 22.606-22.001 27.244-4.052 4.636-8.106 5.218-15.054 1.738-6.948-3.477-29.336-10.813-55.874-34.486-20.655-18.424-34.6-41.176-38.652-48.132-4.054-6.956-.434-10.716 3.045-14.18 3.127-3.114 6.95-8.116 10.423-12.174 3.474-4.056 4.632-6.956 6.948-11.59 2.316-4.639 1.158-8.695-.58-12.172-1.736-3.478-15.632-37.679-21.422-51.592-5.64-13.547-11.368-11.712-15.633-11.927-4.048-.201-8.685-.244-13.316-.244-4.632 0-12.16 1.739-18.53 8.693-6.367 6.956-24.317 23.767-24.317 57.964 0 34.202 24.896 67.239 28.371 71.876 3.475 4.639 48.993 74.818 118.695 104.914 16.576 7.16 29.518 11.434 39.609 14.636 16.644 5.289 31.79 4.542 43.763 2.753 13.349-1.993 41.108-16.807 46.898-33.036 5.79-16.233 5.79-30.144 4.052-33.041-1.736-2.899-6.368-4.638-13.316-8.116m-126.776 173.1h-.093c-41.473-.016-82.15-11.159-117.636-32.216l-8.44-5.01-87.475 22.947 23.348-85.288-5.494-8.745c-23.136-36.798-35.356-79.328-35.338-123 .051-127.431 103.734-231.106 231.22-231.106 61.734.022 119.763 24.094 163.402 67.782 43.636 43.685 67.653 101.754 67.629 163.51-.052 127.442-103.733 231.126-231.123 231.126M477.113 81.55C424.613 28.989 354.795.03 280.407 0 127.136 0 2.392 124.736 2.33 278.053c-.02 49.011 12.784 96.847 37.118 139.019L0 561.167l147.41-38.668c40.617 22.153 86.346 33.83 132.886 33.845h.114c153.255 0 278.01-124.748 278.072-278.068.028-74.301-28.869-144.165-81.369-196.725" fill="#FFF" fillRule="evenodd"/>
                             </svg>
                         </span>
@@ -1283,11 +1315,10 @@ export default function App() {
                 </section>
             </main>
 
-            <footer className="py-15 bg-linear-to-r from-[#03050d] via-[#0a0d1a] to-[#020510] z-2 px-[15%] flex flex-col items-center justify-center gap-4">
+            <footer className="overflow-x-hidden py-15 bg-linear-to-r from-[#03050d] via-[#0a0d1a] to-[#020510] z-2 px-[5%] lg:px-[15%] flex flex-col items-center justify-center gap-4">
                 <span className="flex items-center gap-1 pb-4">
                     <svg
-                        width="92"
-                        height="92"
+                        className="lg:h-23 lg:w-23 w-16 h-16"
                         viewBox="0 0 100 100"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1324,7 +1355,7 @@ export default function App() {
                     </h1>
                 </span>
 
-                <p className="text-slate-300/90 font-mono pt-8 border-t border-t-slate-300/8 min-w-full text-center">
+                <p className="text-slate-300/80 font-mono text-sm lg:text-base px-6 pt-8 border-t border-t-slate-300/6 min-w-full text-center">
                     © 2026 Gabriel Grozinski. Todos os direitos reservados.
                 </p>
             </footer>
