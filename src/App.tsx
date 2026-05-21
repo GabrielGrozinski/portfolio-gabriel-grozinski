@@ -8,6 +8,7 @@ import viajour from './assets/viajour.png';
 import closetConcept from './assets/closet-concept.png';
 import misturaBoa from './assets/mistura-boa-mobile.png';
 import taNaBiblia from './assets/ta-na-biblia.png';
+import rafael from './assets/rafael.png';
 
 
 const skills = [
@@ -293,6 +294,16 @@ export default function App() {
                         link: 'https://ta-na-biblia.vercel.app/',
                         finalizado: true,
                         btn_finalizado: "Visitar",
+                    },
+                    {
+                        img: rafael,
+                        titulo: 'Advocacia Moderna',
+                        p: 'Site institucional de advocacia com design minimalista, profissional e foco em conversão de clientes.',
+                        skills: ['Vite', 'Tailwind', 'React'],
+                        tipo: ['Finalizados', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: 'https://rafael-marchetti-piacente.vercel.app/',
+                        finalizado: true,
                     },
                     {
                         img: viajour,
