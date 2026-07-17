@@ -6,9 +6,12 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import confereAe from './assets/confere-ae.png';
 import viajour from './assets/viajour.png';
 import closetConcept from './assets/closet-concept.png';
+import orion from './assets/orion.png';
 import misturaBoa from './assets/mistura-boa-mobile.png';
 import taNaBiblia from './assets/ta-na-biblia.png';
 import rafael from './assets/rafael.png';
+import oVerbo from './assets/o-verbo.png';
+import kids from './assets/kids.png';
 
 
 const skills = [
@@ -296,9 +299,31 @@ export default function App() {
                         btn_finalizado: "Visitar",
                     },
                     {
+                        img: oVerbo,
+                        titulo: 'O Verbo',
+                        p: 'Site de estudo bíblico moderno, com chatbox via Groq integrado.',
+                        skills: ['TypeScript', 'Tailwind', 'Groq'],
+                        tipo: ['Finalizados', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: 'https://o-verbo.vercel.app/',
+                        finalizado: true,
+                        btn_finalizado: "Visitar",
+                    },
+                    {
+                        img: kids,
+                        titulo: 'Ministério Kids',
+                        p: 'Gerador de aula bíblica, integrado com I.A e feito para professsores infantis.',
+                        skills: ['TypeScript', 'Tailwind', 'Groq'],
+                        tipo: ['Finalizados', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: 'https://ministerio-kids.vercel.app/',
+                        finalizado: true,
+                        btn_finalizado: "Visitar",
+                    },
+                    {
                         img: rafael,
                         titulo: 'Advocacia Moderna',
-                        p: 'Site institucional de advocacia com design minimalista, profissional e foco em conversão de clientes.',
+                        p: 'Site institucional de advocacia com design minimalista e profissional.',
                         skills: ['Vite', 'Tailwind', 'React'],
                         tipo: ['Finalizados', 'Todos'],
                         btn_texto: 'Visitar',
@@ -315,6 +340,17 @@ export default function App() {
                         link: 'https://gabrielgrozinski.github.io/ViaJour/#',
                         finalizado: true,
                         github: 'https://github.com/GabrielGrozinski/ViaJour'
+                    },
+                    {
+                        img: orion,
+                        titulo: 'Orion',
+                        p: 'SaaS moderno e profissional, feito para workflow',
+                        skills: ['Vite', 'MongoDB', 'NodeJS'],
+                        tipo: ['Em Construção', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: '',
+                        finalizado: false,
+                        btn_finalizado: "Em construção"
                     },
                     {
                         img: closetConcept,
@@ -493,6 +529,39 @@ export default function App() {
                     },
 
                     {
+                        img: oVerbo,
+                        titulo: 'O Verbo',
+                        p: 'Modern Bible study website, with an integrated chatbox via Groq.',
+                        skills: ['TypeScript', 'Tailwind', 'Groq'],
+                        tipo: ['Completed', 'All'],
+                        btn_texto: 'Visit',
+                        link: 'https://o-verbo.vercel.app/',
+                        finalizado: true,
+                    },
+
+                    {
+                        img: kids,
+                        titulo: 'Ministério Kids',
+                        p: "Bible lesson generator, AI-powered and made for children's teachers.",
+                        skills: ['TypeScript', 'Tailwind', 'Groq'],
+                        tipo: ['Completed', 'All'],
+                        btn_texto: 'Visit',
+                        link: 'https://ministerio-kids.vercel.app/',
+                        finalizado: true,
+                    },
+
+                    {
+                        img: rafael,
+                        titulo: 'Modern Law Firm',
+                        p: 'Law firm institutional website with a minimalist and professional design.',
+                        skills: ['Vite', 'Tailwind', 'React'],
+                        tipo: ['Completed', 'All'],
+                        btn_texto: 'Visit',
+                        link: 'https://rafael-marchetti-piacente.vercel.app/',
+                        finalizado: true,
+                    },
+
+                    {
                         img: viajour,
                         titulo: 'ViaJour',
                         p: 'Travel organization website focused on user experience.',
@@ -502,6 +571,18 @@ export default function App() {
                         link: 'https://gabrielgrozinski.github.io/ViaJour/#',
                         finalizado: true,
                         github: 'https://github.com/GabrielGrozinski/ViaJour'
+                    },
+
+                    {
+                        img: orion,
+                        titulo: 'Orion',
+                        p: 'Modern and profissional SaaS, workflow type',
+                        skills: ['Vite', 'MongoDB', 'NodeJS'],
+                        tipo: ['In Progress', 'All'],
+                        btn_texto: 'Visit',
+                        link: '',
+                        finalizado: false,
+                        btn_finalizado: "In Progress"
                     },
 
                     {
