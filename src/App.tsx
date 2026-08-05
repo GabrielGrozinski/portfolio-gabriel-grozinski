@@ -6,12 +6,12 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import confereAe from './assets/confere-ae.png';
 import viajour from './assets/viajour.png';
 import closetConcept from './assets/closet-concept.png';
-import orion from './assets/orion.png';
 import misturaBoa from './assets/mistura-boa-mobile.png';
 import taNaBiblia from './assets/ta-na-biblia.png';
 import rafael from './assets/rafael.png';
 import oVerbo from './assets/o-verbo.png';
 import kids from './assets/kids.png';
+import zatura from './assets/zatura.png';
 
 
 const skills = [
@@ -214,13 +214,13 @@ export default function App() {
                         title: 'Marketing Digital',
                         desc: 'Estratégias para fortalecer sua marca e ampliar sua presença online.',
                         rodape: 'Digital',
-                        icone: <Target size={30}/>
+                        icone: <LineChart size={30}/>
                     },
                     {
-                        title: 'Tráfego Pago',
-                        desc: 'Campanhas estratégicas para atrair clientes e maximizar resultados.',
+                        title: 'Experiência do Usuário',
+                        desc: 'Meu foco é entender a jornada do usuário e o que realmente influencia suas decisões.',
                         rodape: 'Ads',
-                        icone: <LineChart size={30}/>
+                        icone: <Target size={30}/>
                     },
                     {
                         title: 'Automações',
@@ -288,6 +288,16 @@ export default function App() {
                         finalizado: true
                     },
                     {
+                        img: zatura,
+                        titulo: 'Zatura',
+                        p: 'SaaS moderno e profissional, feito para workflow',
+                        skills: ['Vite', 'MongoDb', 'NodeJS'],
+                        tipo: ['Finalizados', 'Todos'],
+                        btn_texto: 'Visitar',
+                        link: 'https://zatura.vercel.app/',
+                        finalizado: true
+                    },
+                    {
                         img: taNaBiblia,
                         titulo: 'Tá na Bíblia?',
                         p: 'Site de quiz bíblico com forte front-end e experiência de usuário.',
@@ -340,17 +350,6 @@ export default function App() {
                         link: 'https://gabrielgrozinski.github.io/ViaJour/#',
                         finalizado: true,
                         github: 'https://github.com/GabrielGrozinski/ViaJour'
-                    },
-                    {
-                        img: orion,
-                        titulo: 'Orion',
-                        p: 'SaaS moderno e profissional, feito para workflow',
-                        skills: ['Vite', 'MongoDB', 'NodeJS'],
-                        tipo: ['Em Construção', 'Todos'],
-                        btn_texto: 'Visitar',
-                        link: '',
-                        finalizado: false,
-                        btn_finalizado: "Em construção"
                     },
                     {
                         img: closetConcept,
@@ -419,13 +418,13 @@ export default function App() {
                         title: 'Digital Marketing',
                         desc: 'Strategies to strengthen your brand and expand your online presence.',
                         rodape: 'Digital',
-                        icone: <Target size={30}/>
+                        icone: <LineChart size={30}/>
                     },
                     {
-                        title: 'Paid Traffic',
-                        desc: 'Strategic campaigns to attract customers and maximize results.',
+                        title: 'User Experience',
+                        desc: "My focus is on understanding the user's journey and what really influences their decisions.",
                         rodape: 'Ads',
-                        icone: <LineChart size={30}/>
+                        icone: <Target size={30}/>
                     },
                     {
                         title: 'Automations',
@@ -518,6 +517,17 @@ export default function App() {
                     },
 
                     {
+                        img: zatura,
+                        titulo: 'Zatura',
+                        p: 'Modern and profissional SaaS, workflow type',
+                        skills: ['Vite', 'MongoDB', 'NodeJS'],
+                        tipo: ['Completed', 'All'],
+                        btn_texto: 'Visit',
+                        link: 'https://zatura.vercel.app/',
+                        finalizado: true
+                    },
+
+                    {
                         img: taNaBiblia,
                         titulo: 'Tá na Bíblia?',
                         p: 'Modern website with a strong front-end focus and great user experience.',
@@ -571,18 +581,6 @@ export default function App() {
                         link: 'https://gabrielgrozinski.github.io/ViaJour/#',
                         finalizado: true,
                         github: 'https://github.com/GabrielGrozinski/ViaJour'
-                    },
-
-                    {
-                        img: orion,
-                        titulo: 'Orion',
-                        p: 'Modern and profissional SaaS, workflow type',
-                        skills: ['Vite', 'MongoDB', 'NodeJS'],
-                        tipo: ['In Progress', 'All'],
-                        btn_texto: 'Visit',
-                        link: '',
-                        finalizado: false,
-                        btn_finalizado: "In Progress"
                     },
 
                     {
@@ -1115,7 +1113,9 @@ export default function App() {
                         </p>
 
                         <section className="grid grid-cols-[20%_1fr_1fr_1fr_20%] gap-4 lg:gap-0 grid-rows-2 lg:flex mt-4 min-w-full items-center justify-items-center">
-                            <button className="min-w-full lg:min-w-0 col-span-full row-1 px-6 py-3 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] font-medium flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] group relative overflow-hidden text-sm lg:mr-6">
+                            <button 
+                            onClick={() => projetos.ref.current?.scrollIntoView({behavior: 'smooth'})}
+                            className="min-w-full lg:min-w-0 col-span-full row-1 px-6 py-3 text-white shadow-[0px_2px_5px_#ffffff3a] bg-linear-to-r from-[#00a6ff] via-[#3B82F6] to-[#692ffc] font-medium flex justify-center items-center gap-1.25 rounded-full tracking-[0.6px] cursor-pointer transition-all duration-320 hover:-translate-y-1 hover:shadow-[0px_2px_12px_#ffffff5a] group relative overflow-hidden text-sm lg:mr-6">
                                 {traducao[lang].main.sobre_mim.btn_jornada}
                                 <ArrowRight size={22} className="group-hover:translate-x-0.5 transition-all duration-320"/>
                             </button>
